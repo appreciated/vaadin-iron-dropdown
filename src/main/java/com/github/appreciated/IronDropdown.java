@@ -17,13 +17,12 @@ public class IronDropdown extends Component {
     public IronDropdown(Component content) {
         getElement()
                 .setAttribute("horizontal-align", "right")
-                .setAttribute("vertical-align", "top");/*
-                .setAttribute("open-animation-config", "[[openAnimationConfig]]")
-                .setAttribute("close-animation-config", "[[closeAnimationConfig]]");*/
+                .setAttribute("vertical-align", "top");
 
-        //getElement().getStyle().set("width", component.getElement().getStyle().get("width"));
-
-        /** taken from the demo https://github.com/PolymerElements/iron-dropdown/blob/master/demo/x-select.html
+        /** Taken from the iron-dropdown demo
+         *
+         * https://github.com/PolymerElements/iron-dropdown/blob/master/demo/x-select.html
+         *
          * Settings the animation configuration doesnt work?
          * openAnimationConfig: {
          *             type: Array,
@@ -62,7 +61,7 @@ public class IronDropdown extends Component {
 
         /**
          * FluentJreJsonObject and FluentJreJsonArray are basically the same as elemental.json.impl.JreJsonObject and
-         * elemental.json.impl.JreJsonArray I just allowed to use the api fluently
+         * elemental.json.impl.JreJsonArray just to make its api more "fluent"
          */
         JsonFactory factory = new JreJsonFactory();
         getElement().setPropertyJson("properties", new FluentJreJsonObject(factory)

@@ -18,7 +18,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <organization>
-        <name>Johannes Goebel</name>
+        <name>appreciated</name>
     </organization>
     <licenses>
         <license>
@@ -72,6 +72,11 @@
             <groupId>org.webjars.bowergithub.polymerelements</groupId>
             <artifactId>iron-dropdown</artifactId>
             <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bowergithub.web-animations</groupId>
+            <artifactId>web-animations-js</artifactId>
+            <version>2.3.1</version>
         </dependency>
     </dependencies>
 
