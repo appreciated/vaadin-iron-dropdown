@@ -1,25 +1,56 @@
 package com.github.appreciated;
 
+import com.github.appreciated.dropdown.Alignment;
+import com.github.appreciated.dropdown.HorizontalAlignment;
 import com.github.appreciated.dropdown.IronDropdownWrapper;
+import com.github.appreciated.dropdown.VerticalAlignment;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+
+import static com.github.appreciated.dropdown.HorizontalAlignment.LEFT;
+import static com.github.appreciated.dropdown.HorizontalAlignment.RIGHT;
+import static com.github.appreciated.dropdown.VerticalAlignment.BOTTOM;
+import static com.github.appreciated.dropdown.VerticalAlignment.TOP;
 
 @Route("")
 public class DemoView extends Div {
 
+
     public DemoView() {
-        HorizontalLayout content = new HorizontalLayout();
+        VerticalLayout contentHolder = new VerticalLayout(
+                getIronDropDown(LEFT, BOTTOM),
+                getIronDropDown(RIGHT, BOTTOM),
+                getIronDropDown(LEFT, TOP),
+                getIronDropDown(RIGHT, TOP)
+        );
+        contentHolder.setSizeFull();
+        contentHolder.setAlignItems(FlexComponent.Alignment.CENTER);
+        contentHolder.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        add(contentHolder);
+        setSizeFull();
+    }
+
+    IronDropdownWrapper getIronDropDown(HorizontalAlignment hAlignment, VerticalAlignment valignment) {
+        IronDropdownWrapper ironDropdown = new IronDropdownWrapper(
+                new Button("Open"),
+                getContentLayout(),
+                new Alignment(hAlignment, valignment)
+        );
+        ironDropdown.getContentWrapper().getStyle().set("box-shadow", "0px 2px 6px #ccc");
+        return ironDropdown;
+    }
+
+    public HorizontalLayout getContentLayout() {
+        Span content = new Span("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.");
         content.setWidth("300px");
         content.setHeight("300px");
-        content.getElement().getStyle().set("background", "red");
-        add(
-                new HorizontalLayout(
-                        new IronDropdownWrapper(
-                                new Button("Open"),
-                                content
-                        ))
-        );
+        return new HorizontalLayout(content);
     }
+
+
 }
