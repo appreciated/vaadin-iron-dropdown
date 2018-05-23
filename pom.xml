@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.appreciated</groupId>
-    <artifactId>vaadin_iron_dropdown</artifactId>
+    <artifactId>vaadin-iron-dropdown</artifactId>
     <version>0.5-SNAPSHOT</version>
     <name>Vaadin Iron Dropdown</name>
     <description>Integration of iron-dropdown for Vaadin 10</description>
