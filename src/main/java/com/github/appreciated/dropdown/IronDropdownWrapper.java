@@ -26,7 +26,7 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
     private IronDropdown dropdown;
 
     public IronDropdownWrapper(Component button, Component content) {
-        this(button, content, new Alignment(HorizontalAlignment.LEFT, VerticalAlignment.BOTTOM));
+        this(button, content, new Alignment(HorizontalAlignment.LEFT, VerticalAlignment.TOP));
     }
 
     public IronDropdownWrapper(Component button, Component content, Alignment alignment) {

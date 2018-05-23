@@ -23,6 +23,7 @@ public class DemoView extends Div {
 
     public DemoView() {
         VerticalLayout contentHolder = new VerticalLayout(
+                getIronDropDown(null,null), // Default constructor
                 getIronDropDown(LEFT, BOTTOM),
                 getIronDropDown(RIGHT, BOTTOM),
                 getIronDropDown(LEFT, TOP),
@@ -36,14 +37,23 @@ public class DemoView extends Div {
     }
 
     IronDropdownWrapper getIronDropDown(HorizontalAlignment hAlignment, VerticalAlignment valignment) {
-        IronDropdownWrapper ironDropdown = new IronDropdownWrapper(
-                new Button("Open"),
-                getContentLayout(),
-                new Alignment(hAlignment, valignment)
-        );
+        IronDropdownWrapper ironDropdown;
+        if (hAlignment != null && valignment != null) {
+            ironDropdown = new IronDropdownWrapper(
+                    new Button("Open"),
+                    getContentLayout(),
+                    new Alignment(hAlignment, valignment)
+            );
+        } else {
+            ironDropdown = new IronDropdownWrapper(
+                    new Button("Open"),
+                    getContentLayout()
+            );
+        }
         ironDropdown.getContentWrapper().getStyle().set("box-shadow", "0px 2px 6px #ccc");
         return ironDropdown;
     }
+
 
     public HorizontalLayout getContentLayout() {
         Span content = new Span("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.");
