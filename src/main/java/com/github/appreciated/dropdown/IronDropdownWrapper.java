@@ -54,7 +54,7 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
     /**
      * To allow to style the content wrapper
      *
-     * @return
+     * @return the div containing the content
      */
     public Div getContentWrapper() {
         return contentWrapper;
@@ -63,7 +63,7 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
     /**
      * To allow to style the button wrapper
      *
-     * @return
+     * @return the div containing the "button"-wrapper
      */
     public Div getButtonWrapper() {
         return buttonWrapper;
@@ -71,7 +71,7 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
 
     /**
      * To allow to access the iron-dropdown element
-     * @return
+     * @return the dropdown element
      */
     public IronDropdown getDropdown() {
         return dropdown;
