@@ -95,7 +95,7 @@
                       <archive>
                           <index>true</index>
                           <manifest>
-                              <addClasspath>true</addClasspath>
+                              <addClasspath>false</addClasspath>
                               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                           </manifest>
                           <manifestEntries>
@@ -112,9 +112,12 @@
                   <configuration>
                       <scanIntervalSeconds>-1</scanIntervalSeconds>
                       <useTestScope>true</useTestScope>
-                    <!--  <webAppConfig>
-                          <resourceBase>src/test/webjar-debug/META-INF/resources</resourceBase>
-                      </webAppConfig>-->
+                      <webApp>
+                          <resourceBases>
+                              <resourceBase>${project.basedir}/src/main/resources/META-INF/resources</resourceBase>
+                              <!-- <resourceBase>${project.basedir}/src/test/webapp</resourceBase> -->
+                          </resourceBases>
+                      </webApp>
                   </configuration>
               </plugin>
           </plugins>
