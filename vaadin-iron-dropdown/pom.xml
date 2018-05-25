@@ -8,6 +8,7 @@
     <version>0.5.1</version>
     <name>Iron Dropdown Wrapper</name>
     <description>Integration of iron-dropdown for Vaadin 10</description>
+    <packaging>jar</packaging>
 
     <properties>
         <vaadin.version>10.0.0.beta10</vaadin.version>

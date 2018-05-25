@@ -11,8 +11,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @Tag("iron-dropdown-wrapper")
 @HtmlImport("frontend://bower_components/web-animations-js/web-animations-next.min.html")
 @HtmlImport("frontend://bower_components/iron-dropdown/iron-dropdown.html")
-@HtmlImport("context://iron-dropdown-wrapper/iron-dropdown-animation.html")
-@HtmlImport("context://iron-dropdown-wrapper/iron-dropdown-wrapper.html")
+@HtmlImport("frontend://iron-dropdown-wrapper/iron-dropdown-animation.html")
+@HtmlImport("frontend://iron-dropdown-wrapper/iron-dropdown-wrapper.html")
 public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
     @Id("iron-dropdown-content")
     private Div contentWrapper;
