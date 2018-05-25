@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.appreciated</groupId>
-    <artifactId>iron-dropdown-wrapper-demo</artifactId>
-    <name>iron-dropdown-wrapper-demo</name>
+    <artifactId>vaadin-iron-dropdown-demo</artifactId>
+    <name>vaadin-iron-dropdown-demo</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
