@@ -5,7 +5,7 @@
 
     <groupId>com.github.appreciated</groupId>
     <artifactId>vaadin-iron-dropdown</artifactId>
-    <version>0.5.1</version>
+    <version>0.5.2</version>
     <name>Iron Dropdown Wrapper</name>
     <description>Integration of iron-dropdown for Vaadin 10</description>
     <packaging>jar</packaging>
