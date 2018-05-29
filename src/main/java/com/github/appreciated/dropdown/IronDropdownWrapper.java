@@ -69,6 +69,7 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
 
     /**
      * To allow to access the iron-dropdown element
+     *
      * @return the dropdown element
      */
     public IronDropdown getDropdown() {

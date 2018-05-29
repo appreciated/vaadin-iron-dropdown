@@ -49,7 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 scrollAction: String,
                 openAnimationConfig: {
                     type: Array,
-                    value: function() {
+                    value: function () {
                         return [
                             {name: 'fade-in-animation', timing: {delay: 150, duration: 50}},
                             {name: 'expand-animation', timing: {delay: 150, duration: 200}}
@@ -58,12 +58,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 },
                 closeAnimationConfig: {
                     type: Array,
-                    value: function() {
+                    value: function () {
                         return [{name: 'fade-out-animation', timing: {duration: 200}}];
                     }
                 }
             },
-            open: function() {
+            open: function () {
                 this.$.dropdown.open();
             }
         });

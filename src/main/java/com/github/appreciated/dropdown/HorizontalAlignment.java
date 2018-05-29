@@ -1,11 +1,11 @@
 package com.github.appreciated.dropdown;
 
-public enum VerticalAlignment {
-    TOP("top"),BOTTOM("bottom");
+public enum HorizontalAlignment {
+    RIGHT("right"), LEFT("left");
 
     private String alignment;
 
-    VerticalAlignment(String alignment) {
+    HorizontalAlignment(String alignment) {
         this.alignment = alignment;
     }
 
@@ -13,4 +13,3 @@ public enum VerticalAlignment {
         return alignment;
     }
 }
-

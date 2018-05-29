@@ -6,7 +6,6 @@ package com.github.appreciated.dropdown;
  * From my perspective the "alignment" describes in fact the anchor to which the iron-dropdown will be bound.
  * F.e:
  * TOP - LEFT will in fact overflow to the bottom right as soon as the element is larger than the element it is bound to.
- *
  */
 public class Alignment {
     private final HorizontalAlignment horizontalAlignment;
