@@ -5,13 +5,13 @@
 
     <groupId>com.github.appreciated</groupId>
     <artifactId>vaadin-iron-dropdown</artifactId>
-    <version>0.5.2</version>
+    <version>0.6.0</version>
     <name>Iron Dropdown Wrapper</name>
     <description>Integration of iron-dropdown for Vaadin 10</description>
     <packaging>jar</packaging>
 
     <properties>
-        <vaadin.version>10.0.0.beta10</vaadin.version>
+        <vaadin.version>10.0.1</vaadin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

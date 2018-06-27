@@ -12,6 +12,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.github.appreciated.dropdown.HorizontalAlignment.LEFT;
 import static com.github.appreciated.dropdown.HorizontalAlignment.RIGHT;
 import static com.github.appreciated.dropdown.VerticalAlignment.BOTTOM;
@@ -19,11 +22,11 @@ import static com.github.appreciated.dropdown.VerticalAlignment.TOP;
 
 @Route("")
 public class DemoView extends Div {
-
+    List<IronDropdownWrapper> wrappers = new ArrayList<>();
 
     public DemoView() {
         VerticalLayout contentHolder = new VerticalLayout(
-                getIronDropDown(null,null), // Default constructor
+                getIronDropDown(null, null), // Default constructor
                 getIronDropDown(LEFT, BOTTOM),
                 getIronDropDown(RIGHT, BOTTOM),
                 getIronDropDown(LEFT, TOP),
@@ -34,6 +37,24 @@ public class DemoView extends Div {
         contentHolder.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         add(contentHolder);
         setSizeFull();
+
+        new Thread(() -> {
+            for (; true; ) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                getUI().ifPresent(ui -> ui.accessSynchronously(() -> {
+                    System.out.println("------------------------");
+                    for (IronDropdownWrapper wrapper : wrappers) {
+                        System.out.println("opened = " + wrapper.getDropdown().getOpened());
+                    }
+                    System.out.println("------------------------");
+                }));
+            }
+        }).start();
+
     }
 
     IronDropdownWrapper getIronDropDown(HorizontalAlignment hAlignment, VerticalAlignment valignment) {
@@ -50,7 +71,9 @@ public class DemoView extends Div {
                     getContentLayout()
             );
         }
+        ironDropdown.getDropdown().getStyle().set("margin-top", "64px");
         ironDropdown.getContentWrapper().getStyle().set("box-shadow", "0px 2px 6px #ccc");
+        wrappers.add(ironDropdown);
         return ironDropdown;
     }
 

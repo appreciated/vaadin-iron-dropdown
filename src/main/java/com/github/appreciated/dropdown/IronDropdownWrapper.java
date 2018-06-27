@@ -1,6 +1,7 @@
 package com.github.appreciated.dropdown;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.html.Div;
@@ -13,7 +14,7 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @HtmlImport("frontend://bower_components/iron-dropdown/iron-dropdown.html")
 @HtmlImport("frontend://iron-dropdown-wrapper/iron-dropdown-animation.html")
 @HtmlImport("frontend://iron-dropdown-wrapper/iron-dropdown-wrapper.html")
-public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
+public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> implements HasStyle {
     @Id("iron-dropdown-content")
     private Div contentWrapper;
 
@@ -37,12 +38,15 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> {
     }
 
     private void setAlignment(Alignment alignment) {
-        dropdown.getElement().setAttribute("horizontal-align", alignment.getHorizontalAlignment().getAlignment());
-        dropdown.getElement().setAttribute("vertical-align", alignment.getVerticalAlignment().getAlignment());
+        dropdown.getElement()
+                .setAttribute("horizontal-align", alignment.getHorizontalAlignment().getAlignment())
+                .setAttribute("vertical-align", alignment.getVerticalAlignment().getAlignment());
     }
 
     public void setContent(Component contentWrapper) {
+        getContentWrapper().removeAll();
         this.contentWrapper.getElement().appendChild(contentWrapper.getElement());
+        getDropdown().refit();
     }
 
     public void setButton(Component button) {

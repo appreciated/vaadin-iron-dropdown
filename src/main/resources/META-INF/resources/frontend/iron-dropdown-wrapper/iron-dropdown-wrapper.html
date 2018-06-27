@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 margin: 1em;
             }
         </style>
-        <div id="iron-dropdown-button-wrapper" on-tap="open">
+        <div id="iron-dropdown-button-wrapper" on-tap="toggle">
         </div>
         <iron-dropdown id="dropdown"
                        vertical-align="[[verticalAlign]]"
@@ -63,8 +63,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     }
                 }
             },
-            open: function () {
-                this.$.dropdown.open();
+            toggle: function () {
+                this.$.dropdown.toggle();
+                console.log("opened = " + this.$.dropdown.opened);
             }
         });
     </script>
