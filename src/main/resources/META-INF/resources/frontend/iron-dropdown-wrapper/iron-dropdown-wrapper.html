@@ -16,7 +16,8 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/elements/dom-repeat.html">
 <link rel="import" href="/frontend/bower_components/neon-animation/neon-animations.html">
 
 <dom-module id="iron-dropdown-wrapper">
@@ -32,6 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iron-dropdown id="dropdown"
                        vertical-align="[[verticalAlign]]"
                        horizontal-align="[[horizontalAlign]]"
+                       opened="[[opened]]"
                        disabled="[[disabled]]"
                        scroll-action="[[scrollAction]]"
                        open-animation-config="[[openAnimationConfig]]"
@@ -46,6 +48,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 verticalAlign: String,
                 horizontalAlign: String,
                 disabled: Boolean,
+                opened: {
+                    type: Boolean,
+                    notify: true
+                },
                 scrollAction: String,
                 openAnimationConfig: {
                     type: Array,
@@ -65,7 +71,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             },
             toggle: function () {
                 this.$.dropdown.toggle();
-                console.log("opened = " + this.$.dropdown.opened);
             }
         });
     </script>

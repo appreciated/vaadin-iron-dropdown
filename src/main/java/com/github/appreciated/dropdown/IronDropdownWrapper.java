@@ -31,7 +31,6 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> implemen
     public IronDropdownWrapper(Component button, Component content, Alignment alignment) {
         button.getElement().setAttribute("slot", "dropdown-trigger");
         content.getElement().setAttribute("slot", "dropdown-content-wrapper");
-        //content.getElement().getStyle().set("background-color", "var(--lumo-base-color)");
         setButton(button);
         setContent(content);
         setAlignment(alignment);
