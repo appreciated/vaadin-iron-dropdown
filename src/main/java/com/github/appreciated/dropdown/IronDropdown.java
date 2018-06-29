@@ -12,6 +12,7 @@ public class IronDropdown extends Component implements HasStyle {
     public void IronDropdown() {
 
     }
+
     public boolean isOpened() {
         return getParent().get().getElement().getProperty("opened", false);
     }
