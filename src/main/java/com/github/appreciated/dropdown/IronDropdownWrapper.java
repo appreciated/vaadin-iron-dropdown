@@ -34,6 +34,7 @@ public class IronDropdownWrapper extends PolymerTemplate<TemplateModel> implemen
         setButton(button);
         setContent(content);
         setAlignment(alignment);
+        getElement().synchronizeProperty("opened", "opened-changed");
     }
 
     private void setAlignment(Alignment alignment) {

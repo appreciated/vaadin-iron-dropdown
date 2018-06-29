@@ -10,11 +10,10 @@ import com.vaadin.flow.component.dependency.HtmlImport;
 public class IronDropdown extends Component implements HasStyle {
 
     public void IronDropdown() {
-        getElement().synchronizeProperty("opened", "opened-changed");
-    }
 
+    }
     public boolean isOpened() {
-        return getElement().getProperty("opened", false);
+        return getParent().get().getElement().getProperty("opened", false);
     }
 
     public void refit() {
